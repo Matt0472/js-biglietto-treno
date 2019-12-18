@@ -14,9 +14,16 @@ var ticketPriceForKm = 0.21;
 var ticketPrice = passengersKm * ticketPriceForKm;
 console.log(ticketPrice);
 
+document.getElementById('prezzo_del_biglietto').innerHTML ='il prezzo del suo biglietto è ' + ticketPrice + '€';
+
 // calcoliamo il prezzo del biglietto in base all'età dei passeggeri
+
 if (passengersYearsOld <= 18) {
-  console.log(ticketPrice - ((ticketPrice * 20) / 100));
+  ticketPrice = ticketPrice - ((ticketPrice * 20) / 100)
+  console.log(ticketPrice);
 } else if (passengersYearsOld >= 65) {
-  console.log(ticketPrice - ((ticketPrice * 40) / 100));
+  ticketPrice = ticketPrice - ((ticketPrice * 40) / 100)
+  console.log(ticketPrice);
 }
+// stampiamo su html
+document.getElementById('prezzo_scontato').innerHTML ='il prezzo del suo biglietto con lo sconto under18/over65 è ' + ticketPrice + '€';
